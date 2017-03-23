@@ -1,0 +1,35 @@
+{
+  "name": "fh-mongoose-connector",
+  "version": "1.0.0",
+  "description": "Module to connect to Mongo in RHMAP",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/col1985/fh-mongoose-connector.git"
+  },
+  "keywords": [
+    "Feedhenry",
+    "Mongoose",
+    "Connector"
+  ],
+  "author": "Colum Bennett <cbennett@redhat.com> (https://www.redhat.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/col1985/fh-mongoose-connector/issues"
+  },
+  "homepage": "https://github.com/col1985/fh-mongoose-connector#readme",
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-eslint": "19.0.0",
+    "grunt-mochify": "0.3.0",
+    "load-grunt-tasks": "3.5.2",
+    "mochify": "3.1.0",
+    "should": "11.2.1"
+  },
+  "dependencies": {
+    "mongoose": "4.9.1"
+  }
+}
