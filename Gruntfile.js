@@ -10,12 +10,22 @@ module.exports = function(grunt) {
     },
     mochify: {
       options: {
-        reporter: 'spec'
+        reporter: 'spec',
+        timeout: 10000
       },
       unit: {
-        src: ['lib/*-spec.js', 'lib/angular/directives/*-spec.js']
+        src: ['lib/*-spec.js']
+      }
+    },
+    shell: {
+      test: {
+        options: {
+          stdout: true,
+          stderr: true
+        },
+        command: './node_modules/.bin/mocha --reporter list'
       }
     }
   });
-  grunt.registerTask('test', ['eslint', 'mochify:unit']);
+  grunt.registerTask('test', ['eslint', 'shell:test']);
 };

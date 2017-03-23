@@ -30,6 +30,7 @@
   "globals": {
     "angular": false,
     "$fh": false,
+    "Promise": false
   }
 }
 
