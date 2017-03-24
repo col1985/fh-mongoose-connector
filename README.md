@@ -43,8 +43,8 @@ fh-mongoose-connector
 ```
 ### Test
 
-Run tests
+To Run tests, cloen down repo, ensure MongoDB is running locally or start mongo by running `mongod`.
 
 ```bash
-npm test
+  npm test
 ```
