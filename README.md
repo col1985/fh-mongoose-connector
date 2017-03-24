@@ -12,16 +12,24 @@ fh-mongoose-connector
 ```
 
 #### connect
+
 ```javascript
   var uri = process.env.FH_MONGO_CONN_URL;
-  connecter.connectToMongo(uri, function(err, db) {
+
+  var opts = {
+    keepAlive: true,
+    poolSize: 10,
+    connectTimeoutMS: 60000,
+    promiseLibrary: require('bluebiard') // can be any promise lib
+  };
+
+  connecter.connectToMongo(uri, opts, function(err, db) {
     // do stuff
   });
 ```
 
 #### getConfig
 ```javascript
-  var uri = process.env.FH_MONGO_CONN_URL;
   connecter.getConfig(function(cfg) {
     // do stuff
     console.log(cfg)
