@@ -8,16 +8,18 @@ describe(testCfg.label, function() {
   var Connector = require('./../lib/index');
   var connecter = null;
   var safeUri = '';
+  // var Uri = '';
   var test = {};
   var testDb = {};
 
   before(function() {
     safeUri = testCfg.mongoURI;
-    connecter = new Connector();
+    // badUri = testCfg.mongoURI;
+    connecter = Connector;
   });
 
   it('should create connection to mongo', function(done) {
-    connecter.connectToMongo(safeUri, function(err, db) {
+    connecter.connectToMongo(safeUri, {}, function(err, db) {
       if (err) {
         done(err);
       } else {
@@ -29,6 +31,17 @@ describe(testCfg.label, function() {
 
   it('should get test db', function() {
     assert.notEqual(testDb, {});
+  });
+
+  it('connection object on connector should match test db', function() {
+    assert.equal(connecter.connection, testDb);
+  });
+
+  it('should return connection config model', function(done) {
+    connecter.getConfig(function(cfg) {
+      console.log(cfg);
+      done();
+    });
   });
 
   it('should create model', function() {
@@ -46,8 +59,7 @@ describe(testCfg.label, function() {
   });
 
   it('should close connection to mongo', function(done) {
-    testDb.close(function() {
-      done();
-    });
+    connecter.closeConnection();
+    done();
   });
 });
