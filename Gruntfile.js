@@ -8,15 +8,6 @@ module.exports = function(grunt) {
       },
       target: ["lib/**/*.js"]
     },
-    mochify: {
-      options: {
-        reporter: 'spec',
-        timeout: 10000
-      },
-      unit: {
-        src: ['lib/*-spec.js']
-      }
-    },
     shell: {
       test: {
         options: {

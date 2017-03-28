@@ -27,10 +27,6 @@
     "keyword-spacing": ["error"],
     "curly": ["error", "all"]
   },
-  "globals": {
-    "angular": false,
-    "$fh": false,
-    "Promise": false
-  }
+  "globals": {}
 }
 
