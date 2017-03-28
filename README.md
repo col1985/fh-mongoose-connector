@@ -3,6 +3,8 @@ fh-mongoose-connector
 
 [![Build Status](https://travis-ci.org/col1985/fh-mongoose-connector.svg?branch=master)](https://travis-ci.org/col1985/fh-mongoose-connector)
 
+Connector module for FeedHenry/RHMAP retuns a Mongoose database connection object that canbe consumed by Mongoose Schema's and Models.
+
 ### how to use
 
 #### require
