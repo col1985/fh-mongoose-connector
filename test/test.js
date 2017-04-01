@@ -14,19 +14,17 @@ describe(testCfg.label, function() {
 
   before(function() {
     safeUri = testCfg.mongoURI;
-    // badUri = testCfg.mongoURI;
     connecter = Connector;
   });
 
   it('should create connection to mongo', function(done) {
-    connecter.connectToMongo(safeUri, {}, function(err, db) {
-      if (err) {
-        done(err);
-      } else {
+    connecter.connectToMongo(safeUri)
+      .then(function(db) {
         testDb = db;
         done();
-      }
-    });
+      }, function(error) {
+        done(error);
+      });
   });
 
   it('should get test db', function() {
@@ -35,13 +33,6 @@ describe(testCfg.label, function() {
 
   it('connection object on connector should match test db', function() {
     assert.equal(connecter.connection, testDb);
-  });
-
-  it('should return connection config model', function(done) {
-    connecter.getConfig(function(cfg) {
-      console.log(cfg);
-      done();
-    });
   });
 
   it('should create model', function() {
